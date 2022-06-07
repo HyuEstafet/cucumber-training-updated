@@ -1,16 +1,19 @@
 package stepDefinitions;
 
+import helpers.StringHelper;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class GherkinSyntaxSteps {
     List<Map<String, String>> dataStudents;
-    private List<String> studentsList;
+    private List<String> studentsList = new ArrayList<>();
+
 
     @Given("user is on the homepage")
     public void user_is_on_the_homepage() {
@@ -128,9 +131,12 @@ public class GherkinSyntaxSteps {
     }
 
     @Given("print the below students list")
-    public void we_have_the_below_students_list(List<String> studentsList) {
-        this.studentsList = studentsList;
-        System.out.println("All students: " + "\n" + this.studentsList);
+    public void we_have_the_below_students_list(List<String> list) {
+        studentsList = list;
+        System.out.println("All student names printed: ");
+        for (String eachStudent : studentsList) {
+            System.out.println(eachStudent);
+        }
     }
 
     @Given("print the below students credentials:")
