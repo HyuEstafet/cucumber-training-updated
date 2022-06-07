@@ -1,11 +1,12 @@
 # tests created by: Hyulya Gyuler
+  @GherkinTasks
 Feature: Gherkin Syntax tasks
 
   Background:
     * user is on the homepage
 
   Rule: Testing login with the given credentials
-
+    @LoginTestSuccess
     Scenario Outline: User Login
       Given user clicks on the login button
       When user inserts a "<username>"
@@ -20,7 +21,7 @@ Feature: Gherkin Syntax tasks
         | user789  | pass789  |
 
     Scenario: User Login Failed
-
+    @LoginTestFail
       Given user clicks on the login button
       When user inserts an invalid "username"
       And user inserts an invalid "password"
@@ -28,9 +29,9 @@ Feature: Gherkin Syntax tasks
       Then fails to login
 
   Rule: Testing sign up form for new users with mandatory and optional fields
-
-    Scenario Outline: New user sign up (all data mandatory)
-      Given user enters payroll number number as "<PayrollNumber>"
+    @SignUpTest
+    Scenario Outline: New user sign up
+      Given user enters payroll number as "<PayrollNumber>"
       When user enters firstname as "<firstName>" and lastname as "<lastName>"
       And user enters address "<address>"
       And user enters phoneNumber "<phoneNumber>"
@@ -44,19 +45,8 @@ Feature: Gherkin Syntax tasks
         | 333028        | NameOne   | LastNameOne | TestAddressOne | 456-279-5588 | UserNameOne | one@gmail.com | Pass123. | successfully registered |
         | 333029        | NameTwo   | LastNameTwo | TestAddressTwo | 456-279-5599 | UserNameTwo | two@gmail.com | Pass456. | successfully registered |
 
-    Scenario: New user sign up (optional data included)
-      Given user enters "payroll number" number
-      When user enters "firstname" and "lastname"
-      And user enters "address"
-      And user enters "phoneNumber"
-      And user enters optional data "gender"
-      And user enters "username"
-      And user enters "email"
-      And user enters "password"
-      Then user clicks on the register button and see the success message
-
   Rule: To use a data table with one column
-
+    @PrintingStudentsNames
     Scenario: Printing a list of Students names
       * print the below students list
         | Luke Kingshot  |
@@ -66,7 +56,7 @@ Feature: Gherkin Syntax tasks
         | Dominic Taylor |
 
   Rule: To use a data table with multiple columns
-
+    @PrintingStudentsCredentials
     Scenario: Printing students credentials
       * print the below students credentials:
         | username         | password  |

@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import helpers.StringHelper;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,7 +25,7 @@ public class GherkinSyntaxSteps {
     }
 
     @When("user inserts a {}")
-    public void user_inserts_a() {
+    public void user_inserts_a(String string) {
         System.out.println("User inserts a username and a password");
     }
 
@@ -41,7 +40,7 @@ public class GherkinSyntaxSteps {
     }
 
     @When("user inserts an invalid {}")
-    public void user_inserts_an_invalid() {
+    public void user_inserts_an_invalid(String string) {
         System.out.println("User inserts a username and a password (invalid)");
 
     }
@@ -52,80 +51,50 @@ public class GherkinSyntaxSteps {
 
     }
 
-    @Given("user enters payroll number number as {}")
-    public void user_enters_payroll_number_number_as() {
+    @Given("user enters payroll number as {}")
+    public void user_enters_payroll_number_number_as(String string) {
         System.out.println("User inserts a payroll number");
 
     }
 
     @When("user enters firstname as {} and lastname as {}")
-    public void user_enters_firstname_as_and_lastname_as() {
+    public void user_enters_firstname_as_and_lastname_as(String string1, String string2) {
         System.out.println("User inserts a first name and last name");
 
     }
 
     @When("user enters address {}")
-    public void user_enters_address() {
+    public void user_enters_address(String string) {
         System.out.println("User inserts address");
 
     }
 
     @When("user enters phoneNumber {}")
-    public void user_enters_phone_number() {
+    public void user_enters_phone_number(String string) {
         System.out.println("User inserts a phone number");
 
     }
 
     @When("user enters username {}")
-    public void user_enters_username() {
+    public void user_enters_username(String string) {
         System.out.println("User inserts a username");
 
     }
 
     @When("user enters email {}")
-    public void user_enters_email() {
+    public void user_enters_email(String string) {
         System.out.println("User inserts an e-mail");
 
     }
 
     @When("user enters the password as {}")
-    public void user_enters_the_password_as() {
+    public void user_enters_the_password_as(String string) {
         System.out.println("User inserts a password");
 
     }
 
     @Then("user clicks on the register button and see the success message as {}")
-    public void user_clicks_on_the_register_button_and_see_the_success_message_as() {
-        System.out.println("User registers successfully");
-
-    }
-
-    @Given("user enters {} number")
-    public void user_enters_number() {
-        System.out.println("User inserts a payroll number");
-
-    }
-
-    @When("user enters {} and {}")
-    public void user_enters_and() {
-        System.out.println("User inserts a first name and last name");
-
-    }
-
-    @When("user enters {}")
-    public void user_enters() {
-        System.out.println("User inserts all the mandatory registration data");
-
-    }
-
-    @When("user enters optional data {}")
-    public void user_enters_optional_data() {
-        System.out.println("User inserts gender");
-
-    }
-
-    @Then("user clicks on the register button and see the success message")
-    public void user_clicks_on_the_register_button_and_see_the_success_message() {
+    public void user_clicks_on_the_register_button_and_see_the_success_message_as(String string) {
         System.out.println("User registers successfully");
 
     }

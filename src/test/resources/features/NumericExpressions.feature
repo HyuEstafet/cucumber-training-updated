@@ -1,5 +1,5 @@
 # tests created by: Hyulya Gyuler
-@NumericExpressions
+@AllNumericExpressions
 Feature: Calculations of sums for different data types
 
   Background:

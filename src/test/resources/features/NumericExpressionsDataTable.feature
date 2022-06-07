@@ -1,5 +1,5 @@
 # tests created by: Hyulya Gyuler
-@ParameterTypeAndDataTable
+@AllParameterTypeAndDataTable
 Feature: Testing ParameterType and Data Table calculations
 
   Rule: Calculations are done by columns and then compared

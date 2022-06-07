@@ -1,4 +1,5 @@
 # tests created by: Hyulya Gyuler
+  @AllStringExpressionsTasks
 Feature: Cucumber Text Expressions task
 
   Background:
