@@ -136,7 +136,8 @@ public class GherkinSyntaxSteps {
     @Given("print the below students credentials:")
     public void we_have_the_below_shopping_data(DataTable credentials) {
         List<Map<String, String>> dataStudents = credentials.asMaps(String.class, String.class);
-        System.out.println(dataStudents);
+        System.out.println("Student credentials stored in a map: " + dataStudents);
+        System.out.println("Student credentials listed:");
         for (Map<String, String> eachStudentCredential : dataStudents) {
             System.out.println("User " + eachStudentCredential.get("username") + " has " + eachStudentCredential.get("password") + " for password.");
         }
