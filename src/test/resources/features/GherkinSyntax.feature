@@ -20,8 +20,8 @@ Feature: Gherkin Syntax tasks
         | user456  | pass456  |
         | user789  | pass789  |
 
-    Scenario: User Login Failed
     @LoginTestFail
+    Scenario: User Login Failed
       Given user clicks on the login button
       When user inserts an invalid "username"
       And user inserts an invalid "password"
