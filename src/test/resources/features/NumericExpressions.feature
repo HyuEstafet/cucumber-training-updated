@@ -3,7 +3,7 @@
 Feature: Calculations of differences for different data types
 
   Background:
-    * there is a difference calculator
+    * there is a sum calculator
 
   Rule: The calculation type is difference
     @DifferenceOfIntegers_PassScenario
@@ -21,12 +21,12 @@ Feature: Calculations of differences for different data types
   Rule: The calculation type is sum
     @SumOfIntegers_PassScenario
     Scenario: Adding Integers
-      Given we add int numbers 3 and 5
+      Given we calculate sum of int numbers 3 and 5
       When expected sum input result is 8
-      Then we check if the result is correct
+      Then we check if the int sum is correct
 
     @SumOfDecimals_FailScenario
     Scenario: Adding Decimals
-      Given we add decimal numbers 1.2 and 3.0
+      Given we calculate sum of decimal numbers 1.2 and 3.0
       When expected sum decimal input result is 5.2
-      Then we check if the decimal result is correct
+      Then we check if the decimal sum is correct
