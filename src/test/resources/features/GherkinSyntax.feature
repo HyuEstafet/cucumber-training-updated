@@ -7,10 +7,10 @@ Feature: Gherkin Syntax tasks
 
   Rule: Testing login with the given credentials
     @LoginTestSuccess
-    Scenario Outline: User Login
+    Scenario Outline: User Login <username>
       Given user clicks on the login button
-      When user inserts a "<username>"
-      And user inserts a "<password>"
+      When user inserts a <username>
+      And user inserts a <password>
       And user presses the user login button
       Then user logs in successfully
 
@@ -30,15 +30,15 @@ Feature: Gherkin Syntax tasks
 
   Rule: Testing sign up form for new users with mandatory and optional fields
     @SignUpTest
-    Scenario Outline: New user sign up
-      Given user enters payroll number as "<PayrollNumber>"
-      When user enters firstname as "<firstName>" and lastname as "<lastName>"
-      And user enters address "<address>"
-      And user enters phoneNumber "<phoneNumber>"
-      And user enters username "<username>"
-      And user enters email "<email>"
-      And user enters the password as "<password>"
-      Then user clicks on the register button and see the success message as "<successMessage>"
+    Scenario Outline: New user sign up <PayrollNumber>
+      Given user enters payroll number as <PayrollNumber>
+      When user enters firstname as <firstName> and lastname as <lastName>
+      And user enters address <address>
+      And user enters phoneNumber <phoneNumber>
+      And user enters username <username>
+      And user enters email <email>
+      And user enters the password as <password>
+      Then user clicks on the register button and see the success message as <successMessage>
 
       Examples: User Information
         | PayrollNumber | firstName | lastName    | address        | phoneNumber  | username    | email         | password | successMessage          |
